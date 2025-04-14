@@ -6,13 +6,13 @@ import joblib
 # Cargar datos
 df = pd.read_csv("../data/ObesityDataSet.csv")
 
-# Codificar variables categóricas
+# Codificar variables 
 categorical_cols = ['Gender', 'family_history_with_overweight', 'FAVC', 'CAEC', 'SMOKE', 'SCC', 'CALC', 'MTRANS', 'NObeyesdad']
 label_encoders = {col: LabelEncoder().fit(df[col]) for col in categorical_cols}
 for col in categorical_cols:
     df[col] = label_encoders[col].transform(df[col])
 
-# Guardar los codificadores para uso futuro
+# Guardar los codificadores
 joblib.dump(label_encoders, '../label_encoders.pkl')
 
 # Escalar y dividir datos

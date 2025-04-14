@@ -1,7 +1,7 @@
 from sklearn.ensemble import RandomForestClassifier
 import joblib
 
-# Cargar datos procesados
+# Carga de datos procesados
 X_train, X_test, y_train, y_test = joblib.load('../processed_data.pkl')
 
 # Entrenar modelo
